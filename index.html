@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balkissa Touré</title>
+<meta name="description" content="Balkissa Touré : données, agents IA et équité des modèles. Portfolio bilingue FR/EN.">
+<link rel="canonical" href="https://balkissat.github.io/portfolio/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23c4577b'%3E%3Ccircle cx='32' cy='16' r='12'/%3E%3Ccircle cx='48' cy='28' r='12'/%3E%3Ccircle cx='42' cy='46' r='12'/%3E%3Ccircle cx='22' cy='46' r='12'/%3E%3Ccircle cx='16' cy='28' r='12'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='8' fill='%23f6d9df'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://balkissat.github.io/portfolio/">
+<meta property="og:title" content="Balkissa Touré | Portfolio">
+<meta property="og:description" content="Balkissa Touré : données, agents IA et équité des modèles. Portfolio bilingue FR/EN.">
+<meta property="og:image" content="https://balkissat.github.io/portfolio/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CA"><meta property="og:locale:alternate" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://balkissat.github.io/portfolio/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Figtree:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE  personnel et chaleureux, mais rigoureux : une chercheuse qui vulgarise
+   IDEA   un jardin : chaque fleur est un chapitre, la recherche montre le mécanisme qui pousse
+   PICTURE jardin SVG qui éclot, fleurs cliquables qui pulsent; badge photo qui saute; grilles de 100 personnes pour le biais
+   COLOUR beige latte, chocolat, rose poudré, rose profond, feuillage olive
+   TYPE   Yeseva One titres, Figtree texte, Caveat notes manuscrites
+   LAYOUT nom à gauche, badge photo à droite, jardin pleine largeur; bandes alternées beige et rose; tout s'empile sous 760px */
+:root{color-scheme:light dark;
+--bg:light-dark(#efe3d3,#1f130d);
+--bg2:light-dark(#f6d9df,#2c1a17);
+--card:light-dark(#fbf5ee,#2a1b14);
+--ink:light-dark(#3a2217,#f1e4d4);
+--soft:light-dark(#6e4f3f,#c9b29f);
+--rose:light-dark(#c4577b,#ec8fae);
+--blush:light-dark(#eeaabd,#9c4a63);
+--caramel:light-dark(#b07a4f,#d39b6a);
+--leaf:light-dark(#7d8a5a,#93a26a);
+--line:light-dark(#d9c5b0,#4a3428)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+html[lang=fr] [data-en],html[lang=en] [data-fr]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%}
+a{color:var(--rose);text-underline-offset:3px}
+h1,h2,h3{font-family:"Yeseva One",Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,4.4vw,48px)}
+h3{font-size:22px}
+p{margin:0 0 .9em;max-width:66ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(36px,5vw,76px);padding-inline:max(5vw,16px)}
+.pink{background:var(--bg2)}
+.hand{font-family:Caveat,cursive;font-size:24px;color:var(--rose);line-height:1.15}
+.lead{font-size:19px;color:var(--soft);max-width:60ch}
+.small{font-size:14px;color:var(--soft)}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:8px max(5vw,16px)}
+nav .me{font-family:"Yeseva One",serif;font-size:19px;color:var(--ink);text-decoration:none;flex:none}
+nav .links{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+nav a.l{flex:none;color:var(--soft);text-decoration:none;font-weight:600;font-size:15px;padding:8px 2px}
+nav a.l:hover,nav a.l:focus-visible{color:var(--rose)}
+.lang{flex:none;display:flex;border:1.5px solid var(--rose);border-radius:999px;overflow:hidden}
+.lang button{font:700 14px Figtree,sans-serif;border:0;background:transparent;color:var(--rose);padding:8px 12px;min-height:40px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--rose);color:#fff}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+.hero{padding-top:clamp(28px,4vw,56px);padding-bottom:0}
+.hero h1{font-size:clamp(46px,8vw,96px);line-height:1}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px 48px;align-items:center}
+.hero .role{font-size:20px;font-weight:600;margin:14px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:600;color:var(--soft)}
+.badgebox{display:flex;justify-content:center;align-items:center}
+.badge{position:relative;width:clamp(200px,22vw,270px);aspect-ratio:1;animation:hop 1s cubic-bezier(.3,1.7,.5,1) .3s both;cursor:pointer}
+.badge:hover .face,.badge:focus-visible .face{transform:translateY(-8px) rotate(-3deg)}
+.badge .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite}
+.badge .face{position:absolute;inset:16%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 35% 30%,var(--blush),var(--caramel));display:grid;place-items:center;border:5px solid var(--card);box-shadow:0 10px 0 color-mix(in srgb,var(--caramel) 35%,transparent);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.badge .face img{width:100%;height:100%;object-fit:cover}
+.badge .face b{font-family:"Yeseva One",serif;font-weight:400;font-size:clamp(46px,5vw,64px);color:var(--card)}
+.sticker{position:absolute;right:-4%;bottom:10%;background:var(--rose);color:#fff;font-family:Caveat,cursive;font-weight:700;font-size:24px;padding:4px 14px;border-radius:999px;transform:rotate(-8deg);animation:wob 3s ease-in-out infinite;white-space:nowrap}
+@keyframes hop{0%{transform:translateY(40px) scale(.6);opacity:0}100%{transform:none;opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(-2deg) scale(1.06)}}
+.gardenhint{display:flex;align-items:center;gap:12px;margin-top:22px}
+.gardenhint .hand{font-size:27px}
+.tapdot{width:14px;height:14px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 0 var(--rose);animation:ping 1.6s ease-out infinite;flex:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--rose) 60%,transparent)}100%{box-shadow:0 0 0 16px transparent}}
+.garden{position:relative;aspect-ratio:1000/440;max-height:520px}
+.garden svg{position:absolute;inset:0;width:100%;height:100%}
+.fl{cursor:pointer}
+.fl .head{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.fl:hover .head,.fl:focus-visible .head{transform:scale(1.15)}
+.fl:focus-visible{outline:none}
+.fl:hover .pill,.fl:focus-visible .pill{fill:var(--rose)}
+.fl:hover .lbl,.fl:focus-visible .lbl{fill:#fff}
+.pill{fill:var(--card);stroke:var(--rose);stroke-width:2.5;transition:fill .2s}
+.lbl{font-family:Caveat,cursive;font-size:28px;font-weight:700;fill:var(--ink);transition:fill .2s}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite;fill:none;stroke:var(--rose);stroke-width:3}
+@keyframes pulse{0%{transform:scale(.7);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+.sway{animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+.bloom{animation:bloom 1.1s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes bloom{from{transform:scale(0)}to{transform:scale(1)}}
+.arrow{fill:none;stroke:var(--rose);stroke-width:3;stroke-linecap:round;stroke-dasharray:7 7}
+.soil{height:18px;background:var(--caramel);opacity:.35;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hook{font-family:"Yeseva One",serif;font-size:clamp(22px,2.6vw,30px);line-height:1.25;margin:16px 0 22px;max-width:30ch;color:var(--rose)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fact{background:var(--card);border-radius:18px;padding:16px 18px}
+.fact b{display:block;font-family:"Yeseva One",serif;font-weight:400;font-size:clamp(28px,3vw,36px);line-height:1.1;color:var(--rose)}
+.fact>span{color:var(--soft);font-size:15px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.vine{position:relative;margin-top:26px;padding-left:34px}
+.vine::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;border-radius:3px;background:var(--leaf)}
+.job{position:relative;margin-bottom:12px}
+.job::before{content:"";position:absolute;left:-31px;top:14px;width:18px;height:12px;border-radius:0 100% 0 100%;background:var(--leaf);transform:rotate(-20deg)}
+.job.now::before{background:var(--rose);width:16px;height:16px;border-radius:50%;left:-30px;top:12px;transform:none;box-shadow:0 0 0 5px color-mix(in srgb,var(--rose) 25%,transparent)}
+.job button{all:unset;cursor:pointer;display:block;width:100%;background:var(--card);border-radius:16px;padding:14px 18px;box-sizing:border-box}
+.job button:focus-visible{outline:3px solid var(--rose)}
+.job .when{font-size:14px;color:var(--caramel);font-weight:700;white-space:nowrap}
+.job .t{font-weight:700;font-size:17px;display:block}
+.job .org{color:var(--soft)}
+.job .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.job .more>div{overflow:hidden}
+.job.open .more{grid-template-rows:1fr}
+.job ul{margin:10px 0 2px;padding-left:18px;color:var(--soft)}
+.job li{margin-bottom:5px}
+.job .stack{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+.job .stack span{background:var(--bg2);border-radius:7px;padding:2px 8px;font-size:13px;font-weight:600;color:var(--ink)}
+.plus{float:right;font-weight:700;color:var(--rose);transition:transform .3s}
+.job.open .plus{transform:rotate(45deg)}
+.side h3:first-child{margin-top:26px}
+.side h3{margin:24px 0 10px}
+.edu{background:var(--card);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+.edu b{display:block}
+.edu>span{color:var(--soft);font-size:15px}
+.tools{display:flex;flex-wrap:wrap;gap:7px}
+.tools span{background:var(--card);border-radius:8px;padding:4px 10px;font-size:14px;font-weight:600}
+.pubs{display:grid;gap:16px;margin-top:24px}
+.pub{display:grid;grid-template-columns:8em minmax(0,1fr);gap:20px;background:var(--card);border-radius:20px;padding:20px 22px;align-items:start}
+.pub .st2{font-weight:700;font-size:14px;color:var(--rose)}
+.pub b{font-size:17.5px;display:block;line-height:1.35}
+.pub .meta{margin:6px 0 0;color:var(--soft);font-size:15px}
+.clair{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--bg);font-size:15.5px}
+.clair .hand{font-size:22px;display:block;margin-bottom:2px}
+.why{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:26px}
+.cvs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.cv{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 2px 0 var(--line)}
+.cv .ph{width:44px;height:44px;border-radius:50%;background:var(--blush);margin-bottom:8px}
+.cv b{display:block;font-size:17px}
+.cv i{display:block;height:7px;border-radius:4px;background:var(--line);margin-top:8px}
+.cv i:nth-of-type(2){width:80%}.cv i:nth-of-type(3){width:60%}
+.cv .same{font-size:13.5px;color:var(--soft);margin-top:8px}
+.stamp{margin-top:12px;font-weight:700;font-size:15px;border-radius:10px;padding:8px 10px;text-align:center;background:var(--bg2)}
+.lab{background:var(--card);border-radius:24px;padding:clamp(18px,3vw,32px);margin-top:30px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.tab{font:600 15px Figtree,sans-serif;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--rose);border-color:var(--rose);color:#fff}
+.labgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start}
+.people{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.grid100{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-top:8px}
+.grid100 span{aspect-ratio:1;border-radius:50%;background:var(--line);transition:background .4s}
+.grid100 span.on{background:var(--caramel)}
+.grid100.w span.on{background:var(--rose)}
+.grid100 span.th{box-shadow:0 0 0 2px var(--ink) inset}
+.ptitle{font-weight:700}
+.ptitle em{font-style:normal;font-family:"Yeseva One",serif;font-size:30px;color:var(--rose)}
+.big{font-family:"Yeseva One",serif;font-size:clamp(44px,6vw,68px);line-height:1;color:var(--rose)}
+.meter{height:14px;border-radius:7px;background:var(--line);overflow:hidden;margin:6px 0 4px}
+.meter i{display:block;height:100%;background:var(--leaf);border-radius:7px;transition:width .5s}
+.verdict{margin-top:14px;padding:12px 14px;border-radius:14px;background:var(--bg2);font-size:15.5px}
+.dumb{margin-top:26px}
+.drow{display:grid;grid-template-columns:10em minmax(0,1fr) 7em;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
+.drow .tr{position:relative;height:16px}
+.drow .tr::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line)}
+.drow .seg{position:absolute;top:6px;height:4px;background:var(--blush);border-radius:2px}
+.drow .a,.drow .b{position:absolute;top:1px;width:14px;height:14px;border-radius:50%;margin-left:-7px}
+.drow .a{background:var(--caramel)}.drow .b{background:var(--rose)}
+.drow .v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.drow .tl{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--ink);opacity:.45}
+.pipe{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:22px}
+.st{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border-radius:16px;padding:14px 12px;min-height:96px;position:relative;border:2px solid transparent}
+.st:focus-visible{outline:3px solid var(--rose)}
+.st[aria-pressed=true]{border-color:var(--rose)}
+.st b{display:block;font-family:"Yeseva One",serif;font-weight:400;font-size:24px;color:var(--rose);line-height:1}
+.st span{display:block;font-weight:600;font-size:14.5px;margin-top:6px;line-height:1.3}
+.st:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:8px;border-top:2px solid var(--caramel);border-right:2px solid var(--caramel);transform:translateY(-50%) rotate(45deg)}
+.stinfo{background:var(--card);border-radius:16px;padding:16px 18px;margin-top:12px;min-height:84px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(15em,1fr));gap:14px;margin-top:22px}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:14px;margin-top:22px}
+.cards3 .fact b{font-size:24px}
+.cards3 .tag{display:block;color:var(--caramel);font-weight:700;font-size:13.5px}
+.flip{all:unset;box-sizing:border-box;cursor:pointer;perspective:900px;min-height:170px;display:block}
+.flip .in{position:relative;width:100%;height:100%;min-height:170px;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .k{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;justify-content:space-between}
+.flip .f{background:var(--card)}
+.flip .k{background:var(--rose);color:#fff;transform:rotateY(180deg);font-size:15.5px;line-height:1.45;justify-content:center}
+.flip .f b{font-family:"Yeseva One",serif;font-weight:400;font-size:21px;line-height:1.15}
+.flip .f small{color:var(--soft);font-size:13.5px}
+.flip .tag{font-size:13px;font-weight:700;color:var(--caramel)}
+.flip:focus-visible .in{outline:3px solid var(--rose);border-radius:18px}
+.field{background:var(--bg2);border-radius:24px;padding:clamp(18px,3vw,32px);margin-top:46px}
+.fieldgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin-top:18px;align-items:start}
+.sig{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;margin-bottom:12px}
+.sig .bar{grid-column:1/-1;height:12px;border-radius:6px;background:var(--card);overflow:hidden}
+.sig .bar i{display:block;height:100%;border-radius:6px;transition:width .5s}
+.sig b{font-size:15.5px}
+.sig em{font-style:normal;font-weight:700;font-size:14px;white-space:nowrap}
+.trap{background:var(--card);border-radius:18px;padding:18px}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:12px}
+.duo div{text-align:center}
+.col{height:150px;display:flex;align-items:flex-end;justify-content:center;gap:10px;border-bottom:2px solid var(--line)}
+.col i{width:34px;border-radius:8px 8px 0 0;transition:height .5s}
+.col i.a{background:var(--caramel)}.col i.b{background:var(--rose)}
+.duo .gapv{font-family:"Yeseva One",serif;font-size:28px;color:var(--rose);display:block;margin-top:6px}
+.talks{display:grid;grid-template-columns:repeat(auto-fill,minmax(17em,1fr));gap:16px;margin-top:20px}
+.talk{background:var(--card);border-radius:20px;padding:20px;position:relative;overflow:hidden;transition:transform .25s}
+.talk:hover{transform:translateY(-3px)}
+.talk .kind{font-size:13.5px;font-weight:700;color:var(--caramel)}
+.talk h3{font-size:21px;margin:8px 0;padding-right:40px}
+.talk p{color:var(--soft);font-size:15.5px;margin:0}
+.talk .date{display:inline-block;margin-top:12px;font-weight:700;font-size:14px;background:var(--bg2);border-radius:999px;padding:4px 11px;white-space:nowrap}
+.talk .date.soon{background:var(--rose);color:#fff}
+.talk svg{position:absolute;right:-14px;top:-14px;width:76px;height:76px;opacity:.55}
+.talk[hidden]{display:none}
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.clinks{display:grid;gap:10px}
+.clinks a{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--card);border-radius:16px;padding:15px 18px;text-decoration:none;color:var(--ink);font-weight:600;min-height:44px}
+.clinks a span{color:var(--soft);font-weight:500;font-size:14.5px;text-align:right;overflow-wrap:anywhere}
+.clinks a:hover{outline:2px solid var(--rose)}
+.cform{display:grid;gap:6px;background:var(--card);border-radius:20px;padding:20px;margin-bottom:14px}
+.cform label{font-weight:700;font-size:14.5px;margin-top:6px}
+.cform input,.cform select,.cform textarea{font:16px Figtree,sans-serif;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;width:100%}
+.cform textarea{resize:vertical}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:3px solid var(--rose);outline-offset:1px}
+.crow{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.send,.copy{font:700 15px Figtree,sans-serif;border-radius:999px;padding:12px 20px;min-height:44px;cursor:pointer;border:1.5px solid var(--rose)}
+.send{background:var(--rose);color:#fff}.copy{background:transparent;color:var(--rose)}
+.contact{align-items:start}
+footer{padding:22px max(5vw,16px);color:var(--soft);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:900px){.pipe{grid-template-columns:repeat(3,minmax(0,1fr))}.st:nth-child(3)::after{display:none}.labgrid,.fieldgrid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.hero .top,.two,.why,.contact{grid-template-columns:minmax(0,1fr)}.arrow,.arrowhead{display:none}.badgebox{justify-content:flex-start}.badge{width:190px}}
+@media(max-width:600px){nav .me{display:none}nav .links{margin-left:0}.pipe{grid-template-columns:repeat(2,minmax(0,1fr))}.st::after{display:none}.pub{grid-template-columns:minmax(0,1fr);gap:6px}.drow{grid-template-columns:7.4em minmax(0,1fr) 5.6em;font-size:14px}.lbl{font-size:40px}.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections"><div class="wrap">
+<a class="me" href="#top">Balkissa Touré</a>
+<div class="links">
+<a class="l" href="#parcours"><span data-fr>Parcours</span><span data-en>Experience</span></a>
+<a class="l" href="#publications">Publications</a>
+<a class="l" href="#recherche"><span data-fr>Recherche</span><span data-en>Research</span></a>
+<a class="l" href="#scene"><span data-fr>Prises de parole</span><span data-en>Speaking</span></a>
+<a class="l" href="#contact">Contact</a>
+</div>
+<div class="lang" role="group" aria-label="Langue / Language"><button id="bfr" aria-pressed="true">FR</button><button id="ben" aria-pressed="false">EN</button></div>
+</div></nav>
+
+<header class="band hero" id="top"><div class="wrap">
+<div class="top">
+<div>
+<h1>Balkissa Touré</h1>
+<p class="role"><span data-fr>Spécialiste en ingénierie de données et chercheuse en IA responsable, à Montréal.</span><span data-en>Data engineering specialist and responsible AI researcher, based in Montréal.</span></p>
+<p class="lead"><span data-fr>Le jour, je construis des plateformes de données et des agents IA sur Google Cloud. Le reste du temps, je cherche comment empêcher l'IA de reproduire nos inégalités, et je l'explique à qui veut l'entendre.</span><span data-en>By day, I build data platforms and AI agents on Google Cloud. The rest of the time, I study how to stop AI from repeating our inequalities, and I explain it to anyone who will listen.</span></p>
+<div class="chips">
+<span class="chip">Data Engineer, Cogeco Média</span>
+<span class="chip"><span data-fr>Chaire d'éthique et de gouvernance de l'IA, HEC Montréal</span><span data-en>Chair in AI Ethics and Governance, HEC Montréal</span></span>
+<span class="chip"><span data-fr>Ambassadrice Google Women Techmakers</span><span data-en>Google Women Techmakers Ambassador</span></span>
+</div>
+</div>
+<div class="badgebox">
+<div class="badge" id="badge" tabindex="0" role="img" aria-label="Photo de Balkissa Touré">
+<svg class="ring" viewBox="-100 -100 200 200" aria-hidden="true" id="ring"></svg>
+<div class="face" id="face"><img src="photo.jpg" alt="" onerror="this.remove()"></div>
+<span class="sticker"><span data-fr>Salut, c'est moi !</span><span data-en>Hi, it's me!</span></span>
+</div>
+</div>
+</div>
+<div class="gardenhint"><span class="tapdot" aria-hidden="true"></span><span class="hand"><span data-fr>Chaque fleur est une porte : clique dessus pour visiter.</span><span data-en>Each flower is a door: tap one to explore.</span></span></div>
+<div class="garden"><svg id="gsvg" viewBox="0 0 1000 440" preserveAspectRatio="xMidYMax meet" role="group" aria-label="Navigation"></svg></div>
+<div class="soil" aria-hidden="true"></div>
+</div></header>
+
+<section class="band" id="moi"><div class="wrap">
+<h2><span data-fr>Technique et éthique, dans le même cerveau</span><span data-en>Tech and ethics, in the same brain</span></h2>
+<div class="two" style="margin-top:10px">
+<div>
+<p class="hook"><span data-fr>Je construis des modèles et des agents IA. Puis je vérifie qu'ils traitent tout le monde de façon juste, et je rends ça facile à comprendre.</span><span data-en>I build models and AI agents. Then I check that they treat everyone fairly, and I make it easy to understand.</span></p>
+<p><span data-fr>Formée en génie informatique à l'Université d'Ottawa, puis en intelligence d'affaires à HEC Montréal, je passe mes journées dans BigQuery, Airflow et les agents IA, et mes soirées dans les métriques d'équité.</span><span data-en>Trained in computer engineering at the University of Ottawa and in business intelligence at HEC Montréal, I spend my days in BigQuery, Airflow and AI agents, and my evenings in fairness metrics.</span></p>
+<p><span data-fr>Ce mélange est rare, et c'est ce qui me rend utile : je peux ouvrir le code d'un modèle, trouver où il discrimine, puis expliquer le problème à une direction qui n'a jamais vu une ligne de Python.</span><span data-en>That mix is rare, and it is what makes me useful: I can open a model's code, find where it discriminates, then explain the problem to executives who have never seen a line of Python.</span></p>
+</div>
+<div class="facts">
+<div class="fact"><b><span data-fr>1<sup>re</sup></span><span data-en>1<sup>st</sup></span></b><span data-fr>personne en ingénierie de données de Cogeco Média, où j'ai bâti la plateforme de A à Z</span><span data-en>data engineering hire at Cogeco Média, where I built the platform from scratch</span></div>
+<div class="fact"><b>2 M+</b><span data-fr>profils clients unifiés dans la Customer Data Platform que j'ai conçue</span><span data-en>customer profiles unified in the Customer Data Platform I designed</span></div>
+<div class="fact"><b><span data-fr>1 milliard+</span><span data-en>1 billion+</span></b><span data-fr>de lignes dans les jeux de données que mes pipelines traitent</span><span data-en>rows in the datasets my pipelines process</span></div>
+<div class="fact"><b>20+</b><span data-fr>propriétés numériques et des dizaines de sources réunies dans une seule plateforme</span><span data-en>digital properties and dozens of sources brought together in one platform</span></div>
+</div>
+</div>
+</div></section>
+
+<section class="band pink" id="parcours"><div class="wrap">
+<h2><span data-fr>Mon parcours</span><span data-en>My journey</span></h2>
+<p class="hand" style="margin-top:8px"><span data-fr>clique sur une feuille pour voir le détail</span><span data-en>tap a leaf to see the details</span></p>
+<div class="two">
+<div class="vine" id="vine"></div>
+<div class="side">
+<h3><span data-fr>Formation</span><span data-en>Education</span></h3>
+<div class="edu"><b><span data-fr>M. Sc. Intelligence d'affaires</span><span data-en>M.Sc. Business Intelligence</span></b><span data-fr>HEC Montréal, 2023 à 2025. Mémoire sur l'atténuation des biais de genre et de race en apprentissage automatique.</span><span data-en>HEC Montréal, 2023 to 2025. Thesis on mitigating gender and racial bias in machine learning.</span></div>
+<div class="edu"><b><span data-fr>Baccalauréat en sciences appliquées, génie informatique</span><span data-en>B.A.Sc. Computer Engineering</span></b><span data-fr>Université d'Ottawa, 2017 à 2022</span><span data-en>University of Ottawa, 2017 to 2022</span></div>
+<h3><span data-fr>Distinctions et certifications</span><span data-en>Awards and certifications</span></h3>
+<div class="edu"><b><span data-fr>Bourse d'excellence Deloitte en TI</span><span data-en>Deloitte IT Excellence Scholarship</span></b><span>HEC Montréal, 2024</span></div>
+<div class="edu"><b><span data-fr>Scrum Master certifiée</span><span data-en>Certified Scrum Master</span></b><span data-fr>et Acquia Certified Drupal Site Builder</span><span data-en>and Acquia Certified Drupal Site Builder</span></div>
+<h3><span data-fr>Ma boîte à outils</span><span data-en>My toolbox</span></h3>
+<div class="tools" id="tools"></div>
+</div>
+</div>
+</div></section>
+
+<section class="band" id="publications"><div class="wrap">
+<h2><span data-fr>Publications et travaux</span><span data-en>Publications and work</span></h2>
+<p style="margin-top:12px"><span data-fr>Mes travaux forment un projet de recherche mené avec la professeure Joé T. Martineau à la Chaire d'éthique et de gouvernance de l'IA de HEC Montréal : <b>Des biais à l'équité : démystifier, mesurer et corriger les biais dans les systèmes d'IA</b>.</span><span data-en>My work forms a research project led with Professor Joé T. Martineau at HEC Montréal's Chair in AI Ethics and Governance: <b>From bias to fairness: demystifying, measuring and correcting bias in AI systems</b>.</span></p>
+<div class="pubs">
+<div class="pub"><span class="st2"><span data-fr>Publié, 2025</span><span data-en>Published, 2025</span></span><div><b>L'équité dans les systèmes d'intelligence artificielle pour la prise de décision : atténuer les biais algorithmiques genrés et raciaux en apprentissage automatique</b><p class="meta"><span data-fr>Mémoire de maîtrise, HEC Montréal. Codirection : Denis Larocque et Joé T. Martineau.</span><span data-en>Master's thesis, HEC Montréal, in French. Co-supervised by Denis Larocque and Joé T. Martineau.</span> <a href="https://biblos.hec.ca/biblio/memoires/toure_balkissa_m2025.pdf"><span data-fr>Lire le mémoire</span><span data-en>Read the thesis</span></a> · <a href="https://github.com/balkissaa/Memoire_Biais_IA"><span data-fr>Voir le code</span><span data-en>See the code</span></a></p>
+<div class="clair"><span class="hand"><span data-fr>en clair</span><span data-en>in plain words</span></span><span data-fr>J'ai entraîné un réseau de neurones à trier 24 000 CV fictifs, mesuré s'il défavorisait les femmes ou certaines origines, puis testé trois façons de corriger ça. Aucune n'efface tout le biais, mais toutes réduisent l'écart, chacune avec son prix.</span><span data-en>I trained a neural network to screen 24,000 fictional résumés, measured whether it disadvantaged women or certain ethnic groups, then tested three ways to fix it. None removes all the bias, but each one narrows the gap, at its own cost.</span></div></div></div>
+<div class="pub"><span class="st2"><span data-fr>À paraître</span><span data-en>Forthcoming</span></span><div><b>De l'innovation à l'exclusion</b><p class="meta"><span data-fr>Rapport d'étude, Chaire d'éthique et de gouvernance de l'IA, HEC Montréal.</span><span data-en>Study report, Chair in AI Ethics and Governance, HEC Montréal (in French).</span></p>
+<div class="clair"><span class="hand"><span data-fr>en clair</span><span data-en>in plain words</span></span><span data-fr>Un guide pour les organisations qui utilisent l'IA : d'où viennent les biais, comment les mesurer, quels outils techniques employer (AIF360, Fairlearn, What-If Tool) et quels cadres suivre, de la Déclaration de Montréal à l'EU AI Act.</span><span data-en>A guide for organizations that use AI: where bias comes from, how to measure it, which technical tools to use (AIF360, Fairlearn, What-If Tool) and which frameworks to follow, from the Montréal Declaration to the EU AI Act.</span></div></div></div>
+<div class="pub"><span class="st2"><span data-fr>En rédaction</span><span data-en>In progress</span></span><div><b>Biais algorithmiques et injustice épistémique dans les organisations publiques québécoises : l'ignorance comme problème éthique</b><p class="meta"><span data-fr>Article scientifique avec Joé T. Martineau.</span><span data-en>Scientific article with Joé T. Martineau (in French).</span></p>
+<div class="clair"><span class="hand"><span data-fr>en clair</span><span data-en>in plain words</span></span><span data-fr>Quand une organisation ne sait pas que son système discrimine, ou ne se donne pas les moyens de le savoir, l'ignorance devient elle-même un problème éthique. Les personnes lésées par un algorithme sont souvent celles qu'on écoute le moins.</span><span data-en>When an organization does not know its system discriminates, or does not give itself the means to find out, ignorance itself becomes an ethical problem. The people harmed by an algorithm are often the ones least listened to.</span></div></div></div>
+</div>
+</div></section>
+
+<section class="band pink" id="recherche"><div class="wrap">
+<h2><span data-fr>Ma recherche : l'IA peut-elle être juste ?</span><span data-en>My research: can AI be fair?</span></h2>
+<div class="why">
+<div>
+<p class="lead"><span data-fr>L'IA trie déjà des CV, accorde des prêts et décide qui sera contrôlé. Quand elle apprend du passé, elle apprend aussi ses injustices.</span><span data-en>AI already screens résumés, approves loans and decides who gets checked. When it learns from the past, it also learns its injustices.</span></p>
+<p><span data-fr>Dans mon mémoire, j'ai posé une question simple : si deux personnes envoient exactement le même CV et que seul leur genre ou leur origine change, l'IA les traite-t-elle de la même façon ? Et si non, peut-on vraiment corriger ça ?</span><span data-en>In my thesis, I asked a simple question: if two people send exactly the same résumé and only their gender or ethnicity differs, does the AI treat them the same way? And if not, can we really fix it?</span></p>
+<p><span data-fr>Je voulais aussi le faire en français. Les travaux sur l'équité algorithmique y restent rares, alors que les organisations d'ici adoptent l'IA à toute vitesse.</span><span data-en>I also wanted to do it in French. Research on algorithmic fairness is still rare in French, while organizations here adopt AI at full speed.</span></p>
+</div>
+<div>
+<div class="cvs">
+<div class="cv"><div class="ph"></div><b>Lucas</b><i></i><i></i><i></i><p class="same"><span data-fr>Même diplôme, même expérience</span><span data-en>Same degree, same experience</span></p><div class="stamp" id="stL"></div></div>
+<div class="cv"><div class="ph" style="background:var(--caramel)"></div><b>Aminata</b><i></i><i></i><i></i><p class="same"><span data-fr>Même diplôme, même expérience</span><span data-en>Same degree, same experience</span></p><div class="stamp" id="stA"></div></div>
+</div>
+<p class="hand" style="text-align:center;margin-top:12px"><span data-fr>même CV, l'IA biaisée ne voit pas la même chose</span><span data-en>same résumé, the biased AI sees something different</span></p>
+</div>
+</div>
+
+<h3 style="margin-top:46px"><span data-fr>Comment j'ai mené l'expérience</span><span data-en>How I ran the experiment</span></h3>
+<div class="pipe" id="pipe"></div>
+<div class="stinfo" id="stinfo" aria-live="polite"></div>
+
+<div class="lab">
+<h3><span data-fr>Le labo : choisis une méthode de correction</span><span data-en>The lab: pick a correction method</span></h3>
+<p class="small" style="margin-top:6px"><span data-fr>Résultats réels du mémoire, biais de genre, sur des données d'entraînement volontairement biaisées.</span><span data-en>Real results from the thesis, gender bias, on deliberately biased training data.</span></p>
+<div class="tabs" id="tabs" role="group"></div>
+<div class="labgrid">
+<div>
+<div class="people">
+<div><div class="ptitle"><span data-fr>Hommes retenus</span><span data-en>Men selected</span> <em>100</em></div><div class="grid100" id="gm"></div></div>
+<div><div class="ptitle"><span data-fr>Femmes au même profil</span><span data-en>Women, same profile</span> <em id="nW">53</em></div><div class="grid100 w" id="gw"></div></div>
+</div>
+<p class="small" style="margin-top:10px"><span data-fr>Le contour marque 80 personnes : sous ce seuil, on parle de discrimination indirecte probable (règle des quatre cinquièmes).</span><span data-en>The outline marks 80 people: below it, indirect discrimination is likely (the four-fifths rule).</span></p>
+</div>
+<div>
+<div class="small"><span data-fr>Écart de sélection entre hommes et femmes</span><span data-en>Selection gap between men and women</span></div>
+<div class="big" id="gap">47 %</div>
+<div class="small" style="margin-top:16px"><span data-fr>Précision du modèle</span><span data-en>Model accuracy</span></div>
+<div class="meter"><i id="acc" style="width:83%"></i></div>
+<div style="font-weight:700" id="accv">83 %</div>
+<div class="verdict" id="verdict"></div>
+</div>
+</div>
+<div class="dumb" id="dumb"></div>
+<p class="small" style="margin-top:10px"><span data-fr>Point caramel : avant correction. Point rose : après. Ligne pointillée : seuil de 20 % d'écart.</span><span data-en>Caramel dot: before correction. Pink dot: after. Dashed line: 20% gap threshold.</span></p>
+</div>
+
+<h3 style="margin-top:46px"><span data-fr>Et si l'IA devine le genre autrement ?</span><span data-en>What if the AI guesses gender another way?</span></h3>
+<p style="margin-top:10px"><span data-fr>On peut retirer la case « genre » d'un CV, l'information se cache souvent ailleurs : un prénom, un sport, une association. Ce sont des variables proxy. J'en ai injecté de plus en plus fortes pour voir quelles corrections tiennent le coup.</span><span data-en>You can remove the "gender" box from a résumé, but the information often hides elsewhere: a first name, a sport, a club. These are proxy variables. I injected stronger and stronger ones to see which corrections hold up.</span></p>
+<div class="cards3" id="proxy"></div>
+
+<h3 style="margin-top:46px"><span data-fr>Le jargon, traduit</span><span data-en>The jargon, translated</span></h3>
+<p class="hand"><span data-fr>retourne les cartes</span><span data-en>flip the cards</span></p>
+<div class="cards" id="lex"></div>
+
+<div class="field">
+<h3><span data-fr>Sur le terrain : auditer un vrai modèle</span><span data-en>In the field: auditing a real model</span></h3>
+<p style="margin-top:10px"><span data-fr>À la Chaire, je mène des audits techniques d'équité sur des modèles prédictifs réellement utilisés par des organisations. Dans un mandat récent, deux pipelines XGBoost estimaient le risque qu'une personne échoue à une évaluation. Mon rôle : ouvrir le code, mesurer les écarts entre groupes et dire ce qui doit changer.</span><span data-en>At the Chair, I run technical fairness audits on predictive models that organizations actually use. In a recent engagement, two XGBoost pipelines estimated the risk that a person would fail an assessment. My job: open the code, measure gaps between groups, and say what has to change.</span></p>
+<p class="small"><span data-fr>Mandat confidentiel : l'organisation n'est pas nommée et seuls les constats généraux sont présentés.</span><span data-en>Confidential engagement: the organization is not named and only general findings are shown.</span></p>
+<div class="fieldgrid">
+<div>
+<div style="font-weight:700;margin-bottom:12px"><span data-fr>Force du signal de biais, par attribut</span><span data-en>Strength of the bias signal, by attribute</span></div>
+<div id="sigs"></div>
+<p class="small"><span data-fr>Lecture qualitative des constats, sans les chiffres du mandat.</span><span data-en>Qualitative reading of the findings, without the engagement's figures.</span></p>
+</div>
+<div class="trap">
+<div style="font-weight:700"><span data-fr>Le piège que j'ai trouvé dans l'outil d'audit</span><span data-en>The trap I found in the audit tool</span></div>
+<p style="margin:8px 0 0;font-size:15.5px"><span data-fr>L'outil Python utilisé calculait ses métriques en moyenne pondérée sur toutes les classes, au lieu de cibler la classe « échec », celle qui compte. Et son taux de sélection était inversé. Résultat : un biais réel pouvait paraître minuscule.</span><span data-en>The Python tool in use computed its metrics as a weighted average over all classes, instead of targeting the "fail" class, the one that matters. And its selection rate was inverted. The result: a real bias could look tiny.</span></p>
+<div class="tabs" id="trapTabs" role="group" style="margin:12px 0 4px"></div>
+<div class="duo">
+<div><div class="col"><i class="a" id="ca"></i><i class="b" id="cb"></i></div><span class="small"><span data-fr>Groupe A, groupe B</span><span data-en>Group A, group B</span></span></div>
+<div style="align-self:center"><span class="small"><span data-fr>Écart visible</span><span data-en>Visible gap</span></span><span class="gapv" id="gv"></span></div>
+</div>
+<p class="small" style="margin-top:8px"><span data-fr>Exemple illustratif, pas les données du mandat.</span><span data-en>Illustrative example, not the engagement's data.</span></p>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="band" id="scene"><div class="wrap">
+<h2><span data-fr>Sur scène, en classe et en ligne</span><span data-en>On stage, in class and online</span></h2>
+<p class="lead" style="margin-top:12px"><span data-fr>Vulgariser, c'est ma façon de rendre la recherche utile. Je parle de biais en IA, de données et de place des femmes en tech.</span><span data-en>Making research accessible is how I make it useful. I talk about AI bias, data, and women's place in tech.</span></p>
+<div class="tabs" id="filters" role="group" style="margin-top:18px"></div>
+<div class="talks" id="talks"></div>
+</div></section>
+
+<section class="band pink" id="contact"><div class="wrap contact">
+<div>
+<h2><span data-fr>On travaille ensemble ?</span><span data-en>Shall we work together?</span></h2>
+<p class="lead" style="margin-top:14px"><span data-fr>Plateforme de données, agents IA, audit d'équité d'un modèle, conférence ou atelier sur les biais en IA : écris-moi, je réponds en français ou en anglais.</span><span data-en>Data platforms, AI agents, a fairness audit, a talk or workshop on AI bias: write to me, in French or English.</span></p>
+<p class="hand"><span data-fr>les fleurs poussent mieux à plusieurs</span><span data-en>flowers grow better together</span></p>
+<div class="clinks">
+<a href="https://ca.linkedin.com/in/balkissa-toure">LinkedIn <span>balkissa-toure</span></a>
+<a id="cmailto" href="#">Courriel <span id="cmtxt"></span></a>
+<a href="https://www.tiktok.com/@bykissaa">TikTok <span>@bykissaa</span></a>
+<a href="https://github.com/balkissaa/Memoire_Biais_IA">GitHub <span>balkissaa</span></a>
+</div>
+</div>
+<div>
+<form id="cform" class="cform" novalidate>
+<label for="cname"><span data-fr>Ton nom</span><span data-en>Your name</span></label><input id="cname" autocomplete="name" required>
+<label for="cmail"><span data-fr>Ton courriel</span><span data-en>Your email</span></label><input id="cmail" type="email" autocomplete="email" required>
+<label for="ctype"><span data-fr>C'est pour</span><span data-en>It's about</span></label><select id="ctype"></select>
+<label for="cmsg">Message</label><textarea id="cmsg" rows="5" required></textarea>
+<div class="crow"><button type="submit" class="send"><span data-fr>Envoyer le message</span><span data-en>Send the message</span></button><button type="button" class="copy" id="ccopy"><span data-fr>Copier le message</span><span data-en>Copy the message</span></button></div>
+<p class="small" id="cstatus" aria-live="polite"></p>
+</form>
+
+</div></div>
+</div></section>
+
+<footer><div class="wrap">Balkissa Touré, Montréal, 2026</div></footer>
+
+<script>
+{
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let L='fr';
+try{const q=localStorage.getItem('bt-lang');if(q==='en'||q==='fr')L=q}catch(e){}
+const T=o=>typeof o==='string'?o:o[L];
+
+/* ---------- badge ---------- */
+let r='';for(let k=0;k<12;k++){r+=`<ellipse cx="0" cy="-80" rx="13" ry="20" transform="rotate(${k*30})" fill="var(${k%2?'--rose':'--blush'})"/>`}
+for(let k=0;k<12;k++){r+=`<circle cx="0" cy="-93" r="4" transform="rotate(${k*30+15})" fill="var(--caramel)"/>`}
+$('#ring').innerHTML=r;
+const badge=$('#badge');
+const hopNow=()=>{badge.style.animation='none';void badge.offsetWidth;badge.style.animation=''};
+badge.addEventListener('click',hopNow);badge.addEventListener('keydown',e=>{if(e.key==='Enter')hopNow()});
+
+/* ---------- jardin ---------- */
+const flowers=[
+ {x:130,h:250,n:6,c:"--blush",d:"--rose",r:46,l:{fr:"Qui je suis",en:"About me"},to:"moi"},
+ {x:300,h:330,n:8,c:"--rose",d:"--caramel",r:56,l:{fr:"Parcours",en:"Experience"},to:"parcours"},
+ {x:500,h:300,n:5,c:"--caramel",d:"--rose",r:52,l:{fr:"Publications",en:"Publications"},to:"publications"},
+ {x:700,h:380,n:12,c:"--blush",d:"--rose",r:66,l:{fr:"Recherche",en:"Research"},to:"recherche"},
+ {x:870,h:340,n:7,c:"--rose",d:"--blush",r:54,l:{fr:"Sur scène",en:"Speaking"},to:"scene"}
+];
+const gs=$('#gsvg');
+const drawGarden=()=>{
+ let s=7;const rnd=()=>(s=s*16807%2147483647)/2147483647;
+ let g='';
+ for(let i=0;i<34;i++){const x=rnd()*1000,h=30+rnd()*70,bx=x+(rnd()-.5)*30;g+=`<path d="M${x.toFixed(0)} 440 Q${bx.toFixed(0)} ${440-h/2} ${(x+(rnd()-.5)*24).toFixed(0)} ${(440-h).toFixed(0)}" stroke="var(--leaf)" stroke-width="3" fill="none" opacity=".55"/>`}
+ for(let i=0;i<22;i++){const x=rnd()*1000,y=360+rnd()*70,rr=5+rnd()*6;g+=`<g opacity=".8"><circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${rr.toFixed(1)}" fill="var(${rnd()>.5?'--blush':'--caramel'})"/><circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(rr/2.6).toFixed(1)}" fill="var(--bg)"/></g>`}
+ g+=`<path class="arrow" d="M40 20 C 40 90, 70 120, ${130-50} ${190-30}"/><path class="arrow arrowhead" style="stroke-dasharray:none" d="M68 148 L ${130-50} ${190-30} L 88 140"/>`;
+ flowers.forEach((f,i)=>{
+  const top=440-f.h,ctl=f.x+(i%2?28:-28),ly=top+f.h*.72;
+  let pet='',pet2='';
+  for(let k=0;k<f.n;k++){pet+=`<ellipse cx="0" cy="${-f.r*.55}" rx="${(f.r*(f.n>8?.24:.36)).toFixed(1)}" ry="${(f.r*.58).toFixed(1)}" transform="rotate(${360/f.n*k})" fill="var(${f.c})"/>`}
+  for(let k=0;k<f.n;k++){pet2+=`<ellipse cx="0" cy="${-f.r*.36}" rx="${(f.r*.18).toFixed(1)}" ry="${(f.r*.36).toFixed(1)}" transform="rotate(${360/f.n*k+180/f.n})" fill="var(${f.d})" opacity=".75"/>`}
+  g+=`<g class="fl" tabindex="0" role="link" aria-label="${esc(T(f.l))}" data-to="${f.to}">
+  <g class="sway" style="transform-origin:${f.x}px 440px;animation-delay:${-i*1.3}s">
+  <path d="M${f.x} 440 Q${ctl} ${440-f.h/2} ${f.x} ${top}" stroke="var(--leaf)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M${f.x+(i%2?4:-4)} ${ly} q${i%2?-46:46} -18 ${i%2?-58:58} -50 q${i%2?40:-40} 4 ${i%2?58:-58} 50z" fill="var(--leaf)"/>
+  <g transform="translate(${f.x} ${top})"><circle class="pulse" r="${f.r*1.05}" style="animation-delay:${i*.45}s"/><g class="head"><g class="bloom" style="animation-delay:${.15+i*.18}s">${pet}${pet2}<circle r="${(f.r*.26).toFixed(1)}" fill="var(--caramel)"/><circle r="${(f.r*.12).toFixed(1)}" cx="${-f.r*.06}" cy="${-f.r*.06}" fill="var(--bg)" opacity=".5"/></g></g></g>
+  </g>
+  <rect class="pill" rx="20"/><text class="lbl" x="${f.x}" y="${Math.min(top+f.r+44,420)}" text-anchor="middle">${esc(T(f.l))}</text>
+  </g>`;
+ });
+ gs.innerHTML=g;
+ sizePills();
+ gs.querySelectorAll('.fl').forEach(el=>{el.addEventListener('click',()=>go(el));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go(el)}})});
+};
+const sizePills=()=>{gs.querySelectorAll('.fl').forEach(el=>{const t=el.querySelector('.lbl'),p=el.querySelector('.pill');try{const b=t.getBBox();p.setAttribute('x',b.x-16);p.setAttribute('y',b.y-4);p.setAttribute('width',b.width+32);p.setAttribute('height',b.height+8);p.setAttribute('rx',(b.height+8)/2)}catch(e){}})};
+const go=el=>{const t=document.getElementById(el.dataset.to);if(t)t.scrollIntoView({behavior:'smooth'})};
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizePills);
+const gro=new ResizeObserver(sizePills);gro.observe(gs);
+
+/* ---------- parcours ---------- */
+const jobs=[
+ {now:1,w:{fr:"Depuis mai 2026",en:"Since May 2026"},t:"Data Engineer, Business Intelligence",o:"Cogeco Média, Montréal",
+  d:{fr:["Première personne en ingénierie de données de l'entreprise, aujourd'hui lead technique de l'équipe Données.","Je fais le pont entre les équipes d'affaires, de produit et de TI, et les fournisseurs externes de données et de technologie.","Je recueille les besoins, rédige les exigences fonctionnelles et techniques et dessine les schémas d'architecture avant chaque chantier.","J'ai conçu seule l'architecture et le MVP de la Customer Data Platform sur GCP, de l'idée à la mise en production : plus de 20 propriétés numériques, des dizaines de sources, plus de 2 M de profils unifiés.","Pipelines ETL et ELT en Python et SQL, entrepôt BigQuery en couches raw, staging et curated, automatisés avec Cloud Functions et Cloud Run Jobs.","Segmentation d'audience propriétaire qui transforme les données first-party en produits publicitaires, avec un potentiel estimé à environ 2 M$ de revenus additionnels.","Je développe des agents IA, notamment sur un kit interne basé sur Google ADK. Deux exemples :",["Un agent qui génère des DAGs Airflow à partir de la documentation : découpage, embeddings Vertex AI, recherche vectorielle dans AlloyDB avec pgvector.","Un agent qui lit des PDF avec l'API Gemini, en extrait des tables et les charge automatiquement dans BigQuery via Cloud Function et Cloud Run Job."]],
+     en:["First data engineering hire at the company, now technical lead of the data team.","I bridge business, product and IT teams with external data and technology vendors.","I gather requirements, write functional and technical specifications and draw the architecture diagrams before each project.","I single-handedly designed the architecture and MVP of the Customer Data Platform on GCP, from idea to production: 20+ digital properties, dozens of sources, 2M+ unified profiles.","ETL and ELT pipelines in Python and SQL, a layered BigQuery warehouse (raw, staging, curated), automated with Cloud Functions and Cloud Run Jobs.","Proprietary audience segmentation that turns first-party data into advertising products, with an estimated potential of about $2M in additional revenue.","I build AI agents, including on an internal kit based on Google ADK. Two examples:",["An agent that generates Airflow DAGs from documentation: chunking, Vertex AI embeddings, vector search in AlloyDB with pgvector.","An agent that reads PDFs with the Gemini API, extracts tables and loads them automatically into BigQuery through a Cloud Function and a Cloud Run Job."]]},
+  s:["BigQuery","Python","SQL","Airflow","Cloud Run","Vertex AI","AlloyDB","Google ADK","Gemini"]},
+ {now:1,w:{fr:"Depuis janv. 2025",en:"Since Jan. 2025"},t:{fr:"Chercheuse et consultante principale en IA responsable",en:"Senior Consultant and Applied AI Researcher, Responsible AI"},o:{fr:"Chaire d'éthique et de gouvernance de l'IA, HEC Montréal",en:"Chair in AI Ethics and Governance, HEC Montréal"},
+  d:{fr:["Côté technique : audits d'équité de modèles prédictifs (XGBoost, forêts aléatoires, régression logistique, réseaux de neurones), revue de code d'outils d'audit en Python, calcul et interprétation des métriques d'équité avec AIF360 et Fairlearn.","Côté conseil : rapports d'audit, analyses de risques, plans d'action et présentations aux directions; gouvernance des modèles alignée sur le NIST AI RMF, ISO/IEC 42001, l'EU AI Act et la Directive canadienne.","Côté transmission : formations et ateliers de sensibilisation, rapports scientifiques et articles de vulgarisation.","Pour des organisations publiques, parapubliques et privées."],
+     en:["Technical side: fairness audits of predictive models (XGBoost, random forests, logistic regression, neural networks), code review of Python audit tools, computing and interpreting fairness metrics with AIF360 and Fairlearn.","Advisory side: audit reports, risk analyses, action plans and executive presentations; model governance aligned with NIST AI RMF, ISO/IEC 42001, the EU AI Act and Canada's Directive on Automated Decision-Making.","Teaching side: training and awareness workshops, scientific reports and popular-science articles.","For public, para-public and private organizations."]},
+  s:["Python","XGBoost","Random Forest","scikit-learn","AIF360","Fairlearn","NIST AI RMF","ISO/IEC 42001"]},
+ {w:{fr:"Juil. 2025 à mai 2026",en:"Jul. 2025 to May 2026"},t:"Data Analyst, Business Intelligence",o:"Cogeco Média",
+  d:{fr:["Couche analytique BigQuery devenue la source de vérité pour les revenus, l'audience et la consommation.","Modélisation en schéma en étoile et architecture en couches pour l'entrepôt de données.","Tableaux de bord Tableau et Looker Studio pour les équipes d'affaires.","Documentation des données, réduction de la dette technique et cadre de gouvernance des données.","Automatisation des ingestions mensuelles."],en:["BigQuery analytics layer that became the source of truth for revenue, audience and consumption.","Star schema modelling and a layered architecture for the data warehouse.","Tableau and Looker Studio dashboards for business teams.","Data documentation, technical debt reduction and a data governance framework.","Automated monthly ingestions."]},
+  s:["BigQuery","SQL","Schéma en étoile","Tableau","Looker Studio"]},
+ {w:{fr:"Août 2022 à juil. 2025",en:"Aug. 2022 to Jul. 2025"},t:"Systems Engineer",o:"Infosys Public Services, Ottawa",
+  d:{fr:["Pipelines ETL en Python et traitements SQL pour CanadaBuys, la plateforme d'approvisionnement du gouvernement fédéral.","Monitoring automatisé : analyse des logs et alertes.","Composants Drupal, PHP, Twig, JavaScript et Apache Solr maintenus en environnements Dev, Test, UAT et Production.","Tableaux de bord Power BI et Google Analytics; Scrum Master sur plusieurs sprints."],en:["Python ETL pipelines and SQL processing for CanadaBuys, the federal government's procurement platform.","Automated monitoring: log analysis and alerting.","Drupal, PHP, Twig, JavaScript and Apache Solr components maintained across Dev, Test, UAT and Production.","Power BI and Google Analytics dashboards; Scrum Master over several sprints."]},
+  s:["Python","SQL","Drupal","PHP","Twig","JavaScript","Apache Solr","Power BI"]},
+ {w:"2022",t:"Technical Project Lead, LMS",o:{fr:"Institut Africain de Technologies et de Management (ITMA)",en:"African Institute of Technology and Management (ITMA)"},
+  d:{fr:["Déploiement international d'une plateforme d'apprentissage en ligne pour plus de 10 000 utilisateurs, avec des équipes sur trois fuseaux horaires.","Intégration cloud AWS et personnalisation technique de Moodle avec React, PHP et MySQL.","Gouvernance des données et tableaux de bord Power BI sur l'engagement et la performance.","Encadrement d'équipes développement, QA, DevOps et architecture en Agile Scrum avec Jira."],en:["International rollout of a learning platform for 10,000+ users, with teams across three time zones.","AWS cloud integration and technical customization of Moodle with React, PHP and MySQL.","Data governance and Power BI dashboards on engagement and performance.","Led development, QA, DevOps and architecture teams in Agile Scrum with Jira."]},
+  s:["AWS","Moodle","React","PHP","MySQL","Jira"]},
+ {w:{fr:"Avant",en:"Before"},t:{fr:"Données, recherche et matériel",en:"Data, research and hardware"},o:{fr:"Université d'Ottawa et Matrox",en:"University of Ottawa and Matrox"},
+  d:{fr:["Ingénierie de données et analyse de logiciels de recherche à l'Université d'Ottawa.","Assistante d'enseignement en systèmes numériques : VHDL, FPGA et C++ pour plus de 50 étudiants.","Validation FPGA chez Matrox."],en:["Data engineering and research software analysis at the University of Ottawa.","Teaching assistant in digital systems: VHDL, FPGA and C++ for 50+ students.","FPGA validation at Matrox."]}}
+];
+const openJobs=new Set([0]);
+const drawJobs=()=>{
+ $('#vine').innerHTML=jobs.map((j,i)=>`<div class="job${j.now?' now':''}${openJobs.has(i)?' open':''}"><button aria-expanded="${openJobs.has(i)}"><span class="plus" aria-hidden="true">+</span><span class="when">${esc(T(j.w))}</span><span class="t">${esc(T(j.t))}</span><span class="org">${esc(T(j.o))}</span><div class="more"><div><ul>${T(j.d).map(x=>Array.isArray(x)?`<ul>${x.map(y=>`<li>${esc(y)}</li>`).join('')}</ul>`:`<li>${esc(x)}</li>`).join('')}</ul>${j.s?`<div class="stack">${j.s.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}</div></div></button></div>`).join('');
+ $('#vine').querySelectorAll('.job button').forEach((b,i)=>b.addEventListener('click',()=>{const j=b.parentNode;const o=!j.classList.contains('open');j.classList.toggle('open',o);b.setAttribute('aria-expanded',o);o?openJobs.add(i):openJobs.delete(i)}));
+};
+$('#tools').innerHTML=["BigQuery","Python","SQL","Airflow","Cloud Run","Cloud Functions","Vertex AI","AlloyDB","pgvector","Google ADK","Gemini","Keras","TensorFlow","XGBoost","AIF360","Fairlearn","Tableau","Power BI","Looker Studio","AWS","Drupal","Scrum"].map(t=>`<span>${esc(t)}</span>`).join('');
+
+/* ---------- pipeline ---------- */
+const steps=[
+ [{fr:"24 000 CV",en:"24,000 résumés"},{fr:"CV synthétiques de la base FairCVdb : 19 200 pour apprendre, 4 800 pour valider. Chaque profil a un genre et une origine (noire, asiatique ou caucasienne).",en:"Synthetic résumés from the FairCVdb dataset: 19,200 to learn, 4,800 to validate. Each profile has a gender and an ethnicity (Black, Asian or Caucasian)."}],
+ [{fr:"Deux lectures",en:"Two readers"},{fr:"La biographie est lue par un réseau LSTM bidirectionnel, qui lit le texte dans les deux sens. Les infos chiffrées passent par une couche dense.",en:"The bio is read by a bidirectional LSTM network, which reads the text in both directions. Numeric fields go through a dense layer."}],
+ [{fr:"Fusion",en:"Fusion"},{fr:"Les deux lectures sont combinées dans des couches de neurones pour former une seule représentation du candidat.",en:"Both readings are combined in neural layers into a single representation of the candidate."}],
+ [{fr:"Un score",en:"A score"},{fr:"Le modèle sort un score d'employabilité entre 0 et 1, comme un outil de présélection automatique.",en:"The model outputs an employability score between 0 and 1, like an automated screening tool."}],
+ [{fr:"6 mesures",en:"6 metrics"},{fr:"Parité statistique, égalité des chances, chances moyennes, taux d'erreur, impact disparate et précision : on mesure qui gagne et qui perd.",en:"Statistical parity, equal opportunity, average odds, error rate, disparate impact and accuracy: who wins and who loses."}],
+ [{fr:"3 corrections",en:"3 corrections"},{fr:"Avant l'entraînement (Reweighing), pendant (Adversarial Debiasing) et après (Reject Option). Chaque méthode est répétée sur 10 essais.",en:"Before training (Reweighing), during (Adversarial Debiasing) and after (Reject Option). Each method is repeated over 10 runs."}]
+];
+let stepI=0;
+const showStep=i=>{stepI=i;$('#pipe').querySelectorAll('.st').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));$('#stinfo').innerHTML=`<b>${esc(T(steps[i][0]))}</b><p style="margin:6px 0 0">${esc(T(steps[i][1]))}</p>`};
+const drawPipe=()=>{$('#pipe').innerHTML=steps.map((s,i)=>`<button class="st" aria-pressed="false"><b>${i+1}</b><span>${esc(T(s[0]))}</span></button>`).join('');$('#pipe').querySelectorAll('.st').forEach((b,i)=>b.addEventListener('click',()=>showStep(i)));showStep(stepI)};
+
+/* ---------- labo ---------- */
+const M=[
+ {k:{fr:"Avant correction",en:"No correction"},di:.5313,acc:.8258,v:{fr:"Le modèle a appris le biais des données : pour 100 hommes retenus, seulement 53 femmes au profil identique.",en:"The model learned the bias in the data: for every 100 men selected, only 53 women with the same profile."}},
+ {k:{fr:"Avant l'entraînement",en:"Before training"},s:{fr:"Corriger avant",en:"Fix before"},di:.6929,acc:.8425,v:{fr:"On rééquilibre le poids des exemples. L'écart baisse et la précision monte un peu : le meilleur compromis.",en:"We rebalance the weight of examples. The gap shrinks and accuracy even rises a little: the best trade-off."}},
+ {k:{fr:"Pendant l'entraînement",en:"During training"},s:{fr:"Corriger pendant",en:"Fix during"},di:.6573,acc:.7761,v:{fr:"Un second réseau tente de deviner le genre et le modèle apprend à l'en empêcher. Gain réel, précision un peu en baisse.",en:"A second network tries to guess gender and the model learns to stop it. A real gain, with slightly lower accuracy."}},
+ {k:{fr:"Après l'entraînement",en:"After training"},s:{fr:"Corriger après",en:"Fix after"},di:.8826,acc:.5681,v:{fr:"On corrige les décisions proches du seuil. Seule méthode sous les 20 % d'écart, mais la précision chute à 57 %.",en:"We adjust decisions close to the threshold. The only method under a 20% gap, but accuracy drops to 57%."}},
+ {k:{fr:"Données neutres",en:"Neutral data"},di:1.0008,acc:.9187,v:{fr:"Pour comparer : entraîné sur des données sans biais, le modèle traite tout le monde pareil.",en:"For comparison: trained on unbiased data, the model treats everyone the same."}}
+];
+let mI=0;
+const gm=$('#gm'),gw=$('#gw');
+gm.innerHTML=Array.from({length:100},()=>'<span class="on"></span>').join('');
+gw.innerHTML=Array.from({length:100},()=>'<span></span>').join('');
+const pct=x=>Math.round(x*100)+' %';
+const setM=i=>{
+ mI=i;const m=M[i],n=Math.min(100,Math.round(m.di*100)),gap=Math.max(0,Math.round((1-m.di)*100));
+ $('#tabs').querySelectorAll('.tab').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+ gw.querySelectorAll('span').forEach((c,k)=>{c.classList.toggle('on',k<n);c.classList.toggle('th',k===79)});
+ $('#nW').textContent=n;$('#gap').textContent=gap+' %';
+ $('#acc').style.width=Math.round(m.acc*100)+'%';$('#accv').textContent=pct(m.acc);
+ $('#verdict').textContent=T(m.v);
+ $('#stL').textContent=L==='fr'?'Score : élevé':'Score: high';
+ $('#stA').textContent=i===0?(L==='fr'?'Score : plus bas':'Score: lower'):i===4?(L==='fr'?'Score : élevé':'Score: high'):(L==='fr'?'Score : écart réduit':'Score: gap reduced');
+};
+const drawLab=()=>{
+ $('#tabs').innerHTML=M.map(m=>`<button class="tab" aria-pressed="false">${esc(T(m.k))}</button>`).join('');
+ $('#tabs').querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>setM(i)));
+ setM(mI);
+ const before=1-M[0].di;
+ $('#dumb').innerHTML=M.slice(1,4).map(m=>{const a=before*200,b=Math.max(0,1-m.di)*200;return `<div class="drow"><span>${esc(T(m.s))}</span><div class="tr"><span class="tl" style="left:40%"></span><span class="seg" style="left:${b}%;width:${a-b}%"></span><span class="a" style="left:${a}%"></span><span class="b" style="left:${b}%"></span></div><span class="v">${Math.round(before*100)} → ${Math.round((1-m.di)*100)} %</span></div>`}).join('');
+};
+
+/* ---------- proxy ---------- */
+const proxy=[
+ [{fr:"Corriger avant",en:"Fix before"},{fr:"Tient bien",en:"Holds up"},{fr:"Même avec des proxies forts, les résultats restent meilleurs qu'au départ.",en:"Even with strong proxies, results stay better than at the start."}],
+ [{fr:"Corriger pendant",en:"Fix during"},{fr:"Le plus stable",en:"Most stable"},{fr:"C'est la méthode qui résiste le mieux quand le genre se cache ailleurs.",en:"The method that resists best when gender hides elsewhere."}],
+ [{fr:"Corriger après",en:"Fix after"},{fr:"Fragile",en:"Fragile"},{fr:"Elle perd son efficacité dès une corrélation de 0,3 : elle corrige les sorties sans toucher aux causes.",en:"It loses its effect from a 0.3 correlation: it fixes outputs without touching causes."}]
+];
+const drawProxy=()=>{$('#proxy').innerHTML=proxy.map(p=>`<div class="fact"><span class="tag">${esc(T(p[0]))}</span><b>${esc(T(p[1]))}</b><span>${esc(T(p[2]))}</span></div>`).join('')};
+
+/* ---------- lexique ---------- */
+const lex=[
+ [{fr:"Réseau de neurones",en:"Neural network"},{fr:"modèle",en:"model"},{fr:"Un programme qui apprend à partir d'exemples en ajustant des milliers de petits réglages, un peu comme on règle une recette en goûtant.",en:"A program that learns from examples by adjusting thousands of tiny settings, a bit like tuning a recipe by tasting."}],
+ [{fr:"LSTM bidirectionnel",en:"Bidirectional LSTM"},{fr:"modèle",en:"model"},{fr:"Un réseau qui lit un texte dans les deux sens pour comprendre chaque mot selon ce qui vient avant et après.",en:"A network that reads text in both directions to understand each word from what comes before and after."}],
+ [{fr:"Parité statistique",en:"Statistical parity"},{fr:"mesure",en:"metric"},{fr:"Les hommes et les femmes sont-ils retenus au même taux ? Si oui, l'écart vaut zéro.",en:"Are men and women selected at the same rate? If so, the gap is zero."}],
+ [{fr:"Impact disparate",en:"Disparate impact"},{fr:"mesure",en:"metric"},{fr:"Le rapport entre ces deux taux. Sous 0,8, on parle de discrimination indirecte probable.",en:"The ratio between those two rates. Below 0.8, indirect discrimination is likely."}],
+ [{fr:"Égalité des chances",en:"Equal opportunity"},{fr:"mesure",en:"metric"},{fr:"Parmi les bons profils seulement, chaque groupe a-t-il autant de chances d'être reconnu ?",en:"Among qualified profiles only, does each group have the same chance of being recognized?"}],
+ [{fr:"Variable proxy",en:"Proxy variable"},{fr:"piège",en:"trap"},{fr:"Une info qui semble neutre mais trahit le genre ou l'origine : un prénom, un sport, un quartier.",en:"Information that looks neutral but gives away gender or ethnicity: a first name, a sport, a neighbourhood."}],
+ [{fr:"Reweighing",en:"Reweighing"},{fr:"correction",en:"correction"},{fr:"Avant d'apprendre, on donne plus de poids aux exemples sous-représentés pour rééquilibrer.",en:"Before learning, under-represented examples get more weight to rebalance the data."}],
+ [{fr:"Adversarial Debiasing",en:"Adversarial Debiasing"},{fr:"correction",en:"correction"},{fr:"Pendant l'apprentissage, un second réseau joue l'adversaire : s'il devine le genre, le premier est pénalisé.",en:"During learning, a second network plays the adversary: if it guesses gender, the first one is penalized."}],
+ [{fr:"Reject Option",en:"Reject Option"},{fr:"correction",en:"correction"},{fr:"Après coup, on revoit les décisions trop proches du seuil, en faveur du groupe désavantagé.",en:"Afterwards, decisions too close to the threshold are revisited in favour of the disadvantaged group."}]
+];
+const drawLex=()=>{
+ $('#lex').innerHTML=lex.map(l=>`<button class="flip" aria-pressed="false"><div class="in"><div class="f"><span class="tag">${esc(T(l[1]))}</span><b>${esc(T(l[0]))}</b><small>${L==='fr'?'Toucher pour traduire':'Tap to translate'}</small></div><div class="k">${esc(T(l[2]))}</div></div></button>`).join('');
+ $('#lex').querySelectorAll('.flip').forEach(b=>b.addEventListener('click',()=>{const o=!b.classList.contains('on');b.classList.toggle('on',o);b.setAttribute('aria-pressed',o)}));
+};
+
+/* ---------- terrain ---------- */
+const sigs=[
+ [{fr:"Âge",en:"Age"},92,"--rose",{fr:"Fort",en:"Strong"},{fr:"Le signal le plus robuste : les 65 ans et plus sont plus souvent prédits en échec, et le modèle est moins fiable pour eux.",en:"The most robust signal: people 65 and over are more often predicted to fail, and the model is less reliable for them."}],
+ [{fr:"Établissement de formation",en:"Where people studied"},68,"--caramel",{fr:"Préoccupant",en:"Concerning"},{fr:"Des motifs inquiétants pour les personnes diplômées d'établissements anglophones.",en:"Worrying patterns for graduates of English-language institutions."}],
+ [{fr:"Niveau de diplôme",en:"Degree level"},62,"--caramel",{fr:"Préoccupant",en:"Concerning"},{fr:"Des motifs inquiétants pour les personnes sans diplôme déclaré.",en:"Worrying patterns for people with no declared degree."}],
+ [{fr:"Sexe",en:"Sex"},22,"--leaf",{fr:"Faible",en:"Weak"},{fr:"Un biais faible, cohérent avec la population réelle.",en:"A weak bias, consistent with the real population."}]
+];
+const drawSigs=()=>{$('#sigs').innerHTML=sigs.map(s=>`<div class="sig"><b>${esc(T(s[0]))}</b><em style="color:var(${s[2]})">${esc(T(s[3]))}</em><div class="bar"><i style="width:${s[1]}%;background:var(${s[2]})"></i></div><span class="small" style="grid-column:1/-1">${esc(T(s[4]))}</span></div>`).join('')};
+const traps=[{k:{fr:"Moyenne pondérée",en:"Weighted average"},a:91,b:88},{k:{fr:"Classe « échec » ciblée",en:"Targeted \"fail\" class"},a:80,b:55}];
+let tI=0;
+const setTrap=i=>{tI=i;$('#trapTabs').querySelectorAll('.tab').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));const t=traps[i];$('#ca').style.height=t.a+'%';$('#cb').style.height=t.b+'%';$('#gv').textContent=(t.a-t.b)+(L==='fr'?' points':' pts')};
+const drawTrap=()=>{$('#trapTabs').innerHTML=traps.map(t=>`<button class="tab" aria-pressed="false">${esc(T(t.k))}</button>`).join('');$('#trapTabs').querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>setTrap(i)));setTrap(tI)};
+
+/* ---------- scène ---------- */
+const talks=[
+ {c:{fr:"Conférences",en:"Talks"},k:{fr:"Concours de vulgarisation",en:"Science communication contest"},t:{fr:"Mon projet IVADO en 180 secondes",en:"My IVADO project in 180 seconds"},p:{fr:"« L'IA est-elle sexiste et raciste ? » Trois minutes et une seule diapo pour expliquer mon mémoire au grand public.",en:"\"Is AI sexist and racist?\" Three minutes and a single slide to explain my thesis to the public."},d:{fr:"26 novembre 2026",en:"November 26, 2026"}},
+ {c:{fr:"Conférences",en:"Talks"},k:{fr:"Conférence de vulgarisation",en:"Public talk"},t:"CRÉ x BistroBrain",p:{fr:"Douze minutes pour raconter mes recherches sur les biais en IA, sans jargon, dans un cadre convivial.",en:"Twelve minutes on my AI bias research, jargon-free, in a relaxed setting."},d:{fr:"9 décembre 2026",en:"December 9, 2026"},soon:1},
+ {c:{fr:"Conférences",en:"Talks"},k:{fr:"Conférencière",en:"Speaker"},t:"Women Techmakers Montréal 2025",p:{fr:"Conférencière à l'édition des 10 ans, « Redefine Possible », dans la série mondiale de Google pour la Journée internationale des femmes. Le thème : l'essor de l'IA et la façon d'éviter qu'elle amplifie les biais de genre.",en:"Speaker at the 10th-anniversary edition, \"Redefine Possible\", part of Google's global International Women's Day series. The theme: the rise of AI and how to keep it from amplifying gender bias."},d:{fr:"5 avril 2025",en:"April 5, 2025"}},
+ {c:{fr:"Panels",en:"Panels"},k:{fr:"Panéliste",en:"Panelist"},t:{fr:"« Give to Gain », Society of Women Engineers",en:"\"Give to Gain\", Society of Women Engineers"},p:{fr:"Panel de la Journée internationale des femmes à Polytechnique Montréal, organisé par les réseaux SWE de Montréal : promouvoir la générosité pour plus d'égalité, devant 44 participantes et participants.",en:"International Women's Day panel at Polytechnique Montréal, hosted by the SWE Networks in Montréal: promoting generosity to achieve greater equality, with 44 attendees."},d:{fr:"Mars 2026",en:"March 2026"}},
+ {c:{fr:"Communauté",en:"Community"},k:{fr:"Bénévole",en:"Volunteer"},t:"Women Techmakers Montréal 2026",p:{fr:"Bénévole à l'édition 2026, et ambassadrice Google Women Techmakers depuis 2024.",en:"Volunteer at the 2026 edition, and Google Women Techmakers Ambassador since 2024."},d:"2026"},
+ {c:{fr:"Enseignement",en:"Teaching"},k:{fr:"Conférence invitée",en:"Guest lecture"},t:{fr:"Dans une classe universitaire",en:"In a university class"},p:{fr:"Présentation aux étudiantes et étudiants sur les biais en IA et ce que les futurs gestionnaires doivent savoir.",en:"A talk to students on AI bias and what future managers need to know."},d:{fr:"Invitée",en:"Guest"}},
+ {c:{fr:"Enseignement",en:"Teaching"},k:{fr:"Accompagnement",en:"Mentoring"},t:{fr:"Mentorat et marrainage",en:"Mentoring and sponsorship"},p:{fr:"Marraine à HEC Montréal et ancienne VP externe d'Enactus HEC : j'accompagne celles et ceux qui arrivent après moi.",en:"Sponsor at HEC Montréal and former VP External of Enactus HEC: I support the people coming up after me."},d:{fr:"Depuis 2023",en:"Since 2023"}},
+ {c:{fr:"En ligne",en:"Online"},k:{fr:"Création de contenu",en:"Content creation"},t:{fr:"@bykissaa sur TikTok",en:"@bykissaa on TikTok"},p:{fr:"Tech Unpacked pour vulgariser la tech, et le quotidien d'une spécialiste en données à Montréal.",en:"Tech Unpacked to demystify tech, and daily life as a data specialist in Montréal."},d:{fr:"En cours",en:"Ongoing"}}
+];
+const ico=`<svg viewBox="-40 -40 80 80" aria-hidden="true">${Array.from({length:6},(_,k)=>`<ellipse cx="0" cy="-18" rx="10" ry="18" transform="rotate(${k*60})" fill="var(--blush)"/>`).join('')}<circle r="9" fill="var(--caramel)"/></svg>`;
+let fI=0;
+const drawTalks=()=>{
+ const cats=[{fr:"Tout",en:"All"},...talks.map(t=>t.c).filter((c,i,a)=>a.findIndex(x=>x.fr===c.fr)===i)];
+ $('#talks').innerHTML=talks.map(t=>`<article class="talk" data-c="${esc(t.c.fr)}">${ico}<span class="kind">${esc(T(t.k))}</span><h3>${esc(T(t.t))}</h3><p>${esc(T(t.p))}</p><span class="date${t.soon?' soon':''}">${esc(T(t.d))}</span></article>`).join('');
+ $('#filters').innerHTML=cats.map((c,i)=>`<button class="tab" aria-pressed="${i===fI}" data-c="${esc(c.fr)}">${esc(T(c))}</button>`).join('');
+ const apply=()=>{const c=cats[fI].fr;$('#filters').querySelectorAll('.tab').forEach((x,k)=>x.setAttribute('aria-pressed',k===fI));$('#talks').querySelectorAll('.talk').forEach(a=>{a.hidden=!(fI===0||a.dataset.c===c)})};
+ $('#filters').querySelectorAll('.tab').forEach((b,i)=>b.addEventListener('click',()=>{fI=i;apply()}));
+ apply();
+};
+
+
+/* ---------- contact ---------- */
+const MAIL='baalkissatoure@gmail.com';
+$('#cmtxt').textContent=MAIL;$('#cmailto').href='mailto:'+MAIL;
+const ctypes=[{fr:"Un poste",en:"A job"},{fr:"Un audit d'équité",en:"A fairness audit"},{fr:"Une conférence ou un atelier",en:"A talk or workshop"},{fr:"Autre chose",en:"Something else"}];
+let cT=0;
+const drawForm=()=>{$('#ctype').innerHTML=ctypes.map((c,i)=>`<option value="${i}"${i===cT?' selected':''}>${esc(T(c))}</option>`).join('');$('#cmailto').firstChild.textContent=L==='fr'?'Courriel ':'Email '};
+$('#ctype').addEventListener('change',e=>{cT=+e.target.value});
+const compose=()=>{const n=$('#cname').value.trim(),m=$('#cmail').value.trim(),t=T(ctypes[cT]),b=$('#cmsg').value.trim();return{subj:(L==='fr'?'Portfolio : ':'Portfolio: ')+t+(n?' ('+n+')':''),body:b+'\n\n'+n+(m?'\n'+m:''),ok:n&&m&&b}};
+const say=t=>{$('#cstatus').textContent=t};
+$('#cform').addEventListener('submit',e=>{e.preventDefault();const c=compose();
+ if(!c.ok){say(L==='fr'?'Ajoute ton nom, ton courriel et un message.':'Add your name, email and a message.');return}
+ say(L==='fr'?'Envoi en cours…':'Sending…');
+ fetch('https://formsubmit.co/ajax/'+MAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:$('#cname').value.trim(),email:$('#cmail').value.trim(),_replyto:$('#cmail').value.trim(),_subject:c.subj,sujet:T(ctypes[cT]),message:$('#cmsg').value.trim(),_template:'table',_captcha:'false'})})
+ .then(r=>r.json()).then(j=>{if(j.success==='false'||j.success===false)throw 0;$('#cform').reset();cT=0;drawForm();say(L==='fr'?'Merci ! Ton message est bien parti, je te réponds vite.':'Thank you! Your message was sent, I will reply soon.')})
+ .catch(()=>say(L==='fr'?'L\'envoi a échoué. Copie le message et écris à '+MAIL+'.':'Sending failed. Copy the message and write to '+MAIL+'.'))});
+$('#ccopy').addEventListener('click',async()=>{const c=compose();try{await navigator.clipboard.writeText(c.subj+'\n\n'+c.body);say(L==='fr'?'Message copié. Colle-le dans un courriel à '+MAIL+'.':'Message copied. Paste it into an email to '+MAIL+'.')}catch(err){say(L==='fr'?'La copie est bloquée ici : écris directement à '+MAIL+'.':'Copying is blocked here: write directly to '+MAIL+'.')}});
+
+/* ---------- langue ---------- */
+const render=()=>{
+ document.documentElement.lang=L;
+ $('#bfr').setAttribute('aria-pressed',L==='fr');$('#ben').setAttribute('aria-pressed',L==='en');
+ badge.setAttribute('aria-label',L==='fr'?'Photo de Balkissa Touré':'Photo of Balkissa Touré');
+ drawGarden();drawJobs();drawPipe();drawLab();drawProxy();drawLex();drawSigs();drawTrap();drawTalks();drawForm();
+};
+const setL=x=>{L=x;try{localStorage.setItem('bt-lang',x)}catch(e){}render()};
+$('#bfr').addEventListener('click',()=>setL('fr'));
+$('#ben').addEventListener('click',()=>setL('en'));
+render();
+}
+</script>
+</body>
+</html>
