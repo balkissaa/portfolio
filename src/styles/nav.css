@@ -1,0 +1,79 @@
+/* Sticky top navigation with the language switch. */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px max(5vw, 16px);
+}
+
+.site-nav__brand {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--ink);
+  text-decoration: none;
+  flex: none;
+}
+
+.site-nav__links {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-left: auto;
+}
+
+.site-nav__link {
+  flex: none;
+  color: var(--soft);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 2px;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  color: var(--rose);
+}
+
+.language-switch {
+  flex: none;
+  display: flex;
+  border: 1.5px solid var(--rose);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.language-switch button {
+  font: 700 14px var(--font-controls);
+  border: 0;
+  background: transparent;
+  color: var(--rose);
+  padding: 8px 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.language-switch button[aria-pressed='true'] {
+  background: var(--rose);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .site-nav__brand {
+    display: none;
+  }
+
+  .site-nav__links {
+    margin-left: 0;
+  }
+}

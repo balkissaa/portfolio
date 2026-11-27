@@ -1,0 +1,135 @@
+/* Small building blocks reused by several sections. */
+
+/* Text styles */
+.handwritten {
+  font-family: var(--font-hand);
+  font-size: 24px;
+  color: var(--rose);
+  line-height: 1.15;
+}
+
+.lead {
+  font-size: 19px;
+  color: var(--soft);
+  max-width: 60ch;
+}
+
+.note {
+  font-size: 14px;
+  color: var(--soft);
+}
+
+/* Pills listing roles and affiliations */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--soft);
+}
+
+/* Key-figure cards */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.fact {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.fact b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.1;
+  color: var(--rose);
+}
+
+.fact > span {
+  color: var(--soft);
+  font-size: 15px;
+}
+
+/* Toggle buttons used as tabs and filters */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 20px;
+}
+
+.tabs--compact {
+  margin: 12px 0 4px;
+}
+
+.tabs--filters {
+  margin-top: 18px;
+}
+
+.tab {
+  font: 600 15px var(--font-controls);
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 16px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.tab[aria-pressed='true'] {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: #fff;
+}
+
+/* Horizontal gauge */
+.meter {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--line);
+  overflow: hidden;
+  margin: 6px 0 4px;
+}
+
+.meter__fill {
+  display: block;
+  height: 100%;
+  background: var(--leaf);
+  border-radius: 7px;
+  transition: width 0.5s;
+}
+
+/* Buttons */
+.button {
+  font: 700 15px var(--font-controls);
+  border-radius: 999px;
+  padding: 12px 20px;
+  min-height: 44px;
+  cursor: pointer;
+  border: 1.5px solid var(--rose);
+}
+
+.button--primary {
+  background: var(--rose);
+  color: #fff;
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--rose);
+}

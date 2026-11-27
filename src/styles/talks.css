@@ -1,0 +1,82 @@
+/* Talks, panels and community cards. */
+.talks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.talk {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s;
+}
+
+.talk:hover {
+  transform: translateY(-3px);
+}
+
+.talk[hidden] {
+  display: none;
+}
+
+.talk h3 {
+  font-size: 21px;
+  margin: 8px 0;
+  padding-right: 40px;
+}
+
+.talk p {
+  color: var(--soft);
+  font-size: 15.5px;
+  margin: 0;
+}
+
+/* Decorative flower in the top-right corner */
+.talk svg {
+  position: absolute;
+  right: -14px;
+  top: -14px;
+  width: 76px;
+  height: 76px;
+  opacity: 0.55;
+}
+
+.talk__kind {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--caramel);
+}
+
+.talk__award {
+  display: block;
+  width: max-content;
+  margin-top: 10px;
+  background: var(--rose);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.2;
+  padding: 7px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(196, 87, 123, 0.35);
+}
+
+.talk__date {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--bg-tinted);
+  border-radius: 999px;
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+
+.talk__date--upcoming {
+  background: var(--rose);
+  color: #fff;
+}

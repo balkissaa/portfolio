@@ -1,0 +1,56 @@
+/* Publications list. */
+.publications {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 8em minmax(0, 1fr);
+  gap: 20px;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 20px 22px;
+  align-items: start;
+}
+
+.publication__status {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--rose);
+}
+
+.publication__title {
+  font-size: 17.5px;
+  display: block;
+  line-height: 1.35;
+}
+
+.publication__meta {
+  margin: 6px 0 0;
+  color: var(--soft);
+  font-size: 15px;
+}
+
+/* "In plain words" summary under each publication */
+.plain-words {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg);
+  font-size: 15.5px;
+}
+
+.plain-words__label {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 600px) {
+  .publication {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+}
