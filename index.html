@@ -85,8 +85,8 @@ nav a.l:hover,nav a.l:focus-visible{color:var(--rose)}
 .gardenhint .hand{font-size:27px}
 .tapdot{width:14px;height:14px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 0 var(--rose);animation:ping 1.6s ease-out infinite;flex:none}
 @keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--rose) 60%,transparent)}100%{box-shadow:0 0 0 16px transparent}}
-.garden{position:relative;aspect-ratio:1000/440;max-height:520px}
-.garden svg{position:absolute;inset:0;width:100%;height:100%}
+.garden{position:relative;aspect-ratio:1000/440;max-height:430px}
+.garden svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .fl{cursor:pointer}
 .fl .head{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .fl:hover .head,.fl:focus-visible .head{transform:scale(1.15)}
@@ -198,6 +198,12 @@ nav a.l:hover,nav a.l:focus-visible{color:var(--rose)}
 .flip .f b{font-family:"Yeseva One",serif;font-weight:400;font-size:21px;line-height:1.15}
 .flip .f small{color:var(--soft);font-size:13.5px}
 .flip .tag{font-size:13px;font-weight:700;color:var(--caramel)}
+.flip:not(.on):hover .in{transform:rotateY(-22deg)}
+.flip .in{box-shadow:0 0 0 transparent}.flip:not(.on):hover .f{box-shadow:0 10px 24px rgba(0,0,0,.14)}
+@keyframes nudge{0%,80%,100%{transform:rotateY(0)}88%{transform:rotateY(-16deg)}94%{transform:rotateY(6deg)}}
+.flip:not(.on):not(:hover) .in{animation:nudge 5s ease-in-out infinite}
+.flip:nth-child(2n) .in{animation-delay:1.2s}.flip:nth-child(3n) .in{animation-delay:2.4s}
+@media (prefers-reduced-motion:reduce){.flip .in{animation:none!important}}
 .flip:focus-visible .in{outline:3px solid var(--rose);border-radius:18px}
 .field{background:var(--bg2);border-radius:24px;padding:clamp(18px,3vw,32px);margin-top:46px}
 .fieldgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin-top:18px;align-items:start}
@@ -464,7 +470,7 @@ const flowers=[
  {x:130,h:250,n:6,c:"--blush",d:"--rose",r:46,l:{fr:"Qui je suis",en:"About me"},to:"moi"},
  {x:300,h:330,n:8,c:"--rose",d:"--caramel",r:56,l:{fr:"Parcours",en:"Experience"},to:"parcours"},
  {x:500,h:300,n:5,c:"--caramel",d:"--rose",r:52,l:{fr:"Publications",en:"Publications"},to:"publications"},
- {x:700,h:380,n:12,c:"--blush",d:"--rose",r:66,l:{fr:"Recherche",en:"Research"},to:"recherche"},
+ {x:700,h:335,n:12,c:"--blush",d:"--rose",r:66,l:{fr:"Recherche",en:"Research"},to:"recherche"},
  {x:870,h:340,n:7,c:"--rose",d:"--blush",r:54,l:{fr:"Sur scène",en:"Speaking"},to:"scene"}
 ];
 const gs=$('#gsvg');
@@ -610,7 +616,7 @@ const drawTrap=()=>{$('#trapTabs').innerHTML=traps.map(t=>`<button class="tab" a
 
 /* ---------- scène ---------- */
 const talks=[
- {c:{fr:"Conférences",en:"Talks"},k:{fr:"Concours de vulgarisation",en:"Science communication contest"},t:{fr:"Mon projet IVADO en 180 secondes",en:"My IVADO project in 180 seconds"},p:{fr:"« L'IA est-elle sexiste et raciste ? » Trois minutes et une seule diapo pour expliquer mon mémoire au grand public.",en:"\"Is AI sexist and racist?\" Three minutes and a single slide to explain my thesis to the public."},d:{fr:"26 novembre 2026",en:"November 26, 2026"}},
+ {c:{fr:"Conférences",en:"Talks"},k:{fr:"Concours de vulgarisation · Prix du public",en:"Science communication contest · Audience Award"},t:{fr:"Mon projet IVADO en 180 secondes",en:"My IVADO project in 180 seconds"},p:{fr:"« L'IA est-elle sexiste et raciste ? » Trois minutes et une seule diapo pour expliquer mon mémoire au grand public. J'ai remporté le prix du public !",en:"\"Is AI sexist and racist?\" Three minutes and a single slide to explain my thesis to the public. I won the Audience Award!"},d:{fr:"26 novembre 2026",en:"November 26, 2026"}},
  {c:{fr:"Conférences",en:"Talks"},k:{fr:"Conférence de vulgarisation",en:"Public talk"},t:"CRÉ x BistroBrain",p:{fr:"Douze minutes pour raconter mes recherches sur les biais en IA, sans jargon, dans un cadre convivial.",en:"Twelve minutes on my AI bias research, jargon-free, in a relaxed setting."},d:{fr:"9 décembre 2026",en:"December 9, 2026"},soon:1},
  {c:{fr:"Conférences",en:"Talks"},k:{fr:"Conférencière",en:"Speaker"},t:"Women Techmakers Montréal 2025",p:{fr:"Conférencière à l'édition des 10 ans, « Redefine Possible », dans la série mondiale de Google pour la Journée internationale des femmes. Le thème : l'essor de l'IA et la façon d'éviter qu'elle amplifie les biais de genre.",en:"Speaker at the 10th-anniversary edition, \"Redefine Possible\", part of Google's global International Women's Day series. The theme: the rise of AI and how to keep it from amplifying gender bias."},d:{fr:"5 avril 2025",en:"April 5, 2025"}},
  {c:{fr:"Panels",en:"Panels"},k:{fr:"Panéliste",en:"Panelist"},t:{fr:"« Give to Gain », Society of Women Engineers",en:"\"Give to Gain\", Society of Women Engineers"},p:{fr:"Panel de la Journée internationale des femmes à Polytechnique Montréal, organisé par les réseaux SWE de Montréal : promouvoir la générosité pour plus d'égalité, devant 44 participantes et participants.",en:"International Women's Day panel at Polytechnique Montréal, hosted by the SWE Networks in Montréal: promoting generosity to achieve greater equality, with 44 attendees."},d:{fr:"Mars 2026",en:"March 2026"}},
