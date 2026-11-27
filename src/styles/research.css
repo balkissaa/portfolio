@@ -1,0 +1,593 @@
+/* Research section: intro, experiment pipeline, lab, proxies, glossary, audit. */
+
+/* Intro: two identical résumés scored differently */
+.research-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.resumes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+.resume {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 2px 0 var(--line);
+}
+
+.resume b {
+  display: block;
+  font-size: 17px;
+}
+
+.resume__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blush);
+  margin-bottom: 8px;
+}
+
+.resume__avatar--caramel {
+  background: var(--caramel);
+}
+
+.resume__line {
+  display: block;
+  height: 7px;
+  border-radius: 4px;
+  background: var(--line);
+  margin-top: 8px;
+}
+
+.resume__line--medium {
+  width: 80%;
+}
+
+.resume__line--short {
+  width: 60%;
+}
+
+.resume__caption {
+  font-size: 13.5px;
+  color: var(--soft);
+  margin-top: 8px;
+}
+
+.resume__score {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 8px 10px;
+  text-align: center;
+  background: var(--bg-tinted);
+}
+
+/* Experiment pipeline: six clickable steps */
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pipeline__step {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 12px;
+  min-height: 96px;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pipeline__step:focus-visible {
+  outline: 3px solid var(--rose);
+}
+
+.pipeline__step[aria-pressed='true'] {
+  border-color: var(--rose);
+}
+
+.pipeline__step b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--rose);
+  line-height: 1;
+}
+
+.pipeline__step span {
+  display: block;
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+/* Chevron between two steps */
+.pipeline__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--caramel);
+  border-right: 2px solid var(--caramel);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pipeline__info {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-top: 12px;
+  min-height: 84px;
+}
+
+.pipeline__info p {
+  margin: 6px 0 0;
+}
+
+/* Lab: compare bias-correction methods */
+.lab {
+  background: var(--card);
+  border-radius: 24px;
+  padding: clamp(18px, 3vw, 32px);
+  margin-top: 30px;
+}
+
+.lab__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.lab__groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.lab__group-title {
+  font-weight: 700;
+}
+
+.lab__group-title em {
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--rose);
+}
+
+.lab__gap {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1;
+  color: var(--rose);
+}
+
+.lab__accuracy {
+  font-weight: 700;
+}
+
+.lab__verdict {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg-tinted);
+  font-size: 15.5px;
+}
+
+/* Grid of 100 people, one dot each */
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.dot-grid span {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.4s;
+}
+
+.dot-grid span.is-on {
+  background: var(--caramel);
+}
+
+.dot-grid--women span.is-on {
+  background: var(--rose);
+}
+
+.dot-grid span.is-threshold {
+  box-shadow: 0 0 0 2px var(--ink) inset;
+}
+
+/* Dumbbell chart: gap before and after each correction */
+.dumbbell {
+  margin-top: 26px;
+}
+
+.dumbbell__row {
+  display: grid;
+  grid-template-columns: 10em minmax(0, 1fr) 7em;
+  gap: 12px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.dumbbell__track {
+  position: relative;
+  height: 16px;
+}
+
+.dumbbell__track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7px;
+  height: 2px;
+  background: var(--line);
+}
+
+.dumbbell__segment {
+  position: absolute;
+  top: 6px;
+  height: 4px;
+  background: var(--blush);
+  border-radius: 2px;
+}
+
+.dumbbell__dot {
+  position: absolute;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-left: -7px;
+}
+
+.dumbbell__dot--before {
+  background: var(--caramel);
+}
+
+.dumbbell__dot--after {
+  background: var(--rose);
+}
+
+.dumbbell__threshold {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 0;
+  border-left: 2px dashed var(--ink);
+  opacity: 0.45;
+}
+
+.dumbbell__value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Proxy-variable cards */
+.proxy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.proxy-cards .fact b {
+  font-size: 24px;
+}
+
+.proxy-cards .fact__tag {
+  display: block;
+  color: var(--caramel);
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+/* Glossary: cards that flip to reveal a plain-language definition */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.flip-card {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  perspective: 900px;
+  min-height: 170px;
+  display: block;
+}
+
+.flip-card__inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card__front,
+.flip-card__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flip-card__front {
+  background: var(--card);
+}
+
+.flip-card__back {
+  background: var(--rose);
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 15.5px;
+  line-height: 1.45;
+  justify-content: center;
+}
+
+.flip-card__front b {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.flip-card__front small {
+  color: var(--soft);
+  font-size: 13.5px;
+}
+
+.flip-card__tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--caramel);
+}
+
+/* Hint that the cards flip: a peek on hover, a slow nudge otherwise */
+.flip-card:not(.is-flipped):hover .flip-card__inner {
+  animation: card-peek 1.4s ease-in-out infinite;
+}
+
+.flip-card:not(.is-flipped):not(:hover) .flip-card__inner {
+  animation: card-nudge 5s ease-in-out infinite;
+}
+
+.flip-card:nth-child(2n) .flip-card__inner {
+  animation-delay: 1.2s;
+}
+
+.flip-card:nth-child(3n) .flip-card__inner {
+  animation-delay: 2.4s;
+}
+
+.flip-card:focus-visible .flip-card__inner {
+  outline: 3px solid var(--rose);
+  border-radius: 18px;
+}
+
+@keyframes card-peek {
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+
+  45% {
+    transform: rotateY(40deg);
+  }
+
+  70% {
+    transform: rotateY(-6deg);
+  }
+}
+
+@keyframes card-nudge {
+  0%,
+  80%,
+  100% {
+    transform: rotateY(0);
+  }
+
+  88% {
+    transform: rotateY(-16deg);
+  }
+
+  94% {
+    transform: rotateY(6deg);
+  }
+}
+
+/* Field audit: bias signals and the audit-tool trap */
+.audit {
+  background: var(--bg-tinted);
+  border-radius: 24px;
+  padding: clamp(18px, 3vw, 32px);
+  margin-top: 46px;
+}
+
+.audit__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 18px;
+  align-items: start;
+}
+
+.audit__heading {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.signal b {
+  font-size: 15.5px;
+}
+
+.signal em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.signal__bar {
+  grid-column: 1/-1;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.signal__fill {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s;
+}
+
+.signal__note {
+  grid-column: 1/-1;
+}
+
+.trap {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.trap__heading {
+  font-weight: 700;
+}
+
+.trap__text {
+  margin: 8px 0 0;
+  font-size: 15.5px;
+}
+
+.trap__chart {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.trap__chart div {
+  text-align: center;
+}
+
+.trap__result {
+  align-self: center;
+}
+
+.trap__columns {
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--line);
+}
+
+.trap__bar {
+  width: 34px;
+  border-radius: 8px 8px 0 0;
+  transition: height 0.5s;
+}
+
+.trap__bar--a {
+  background: var(--caramel);
+}
+
+.trap__bar--b {
+  background: var(--rose);
+}
+
+.trap__gap {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--rose);
+  display: block;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .pipeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pipeline__step:nth-child(3)::after {
+    display: none;
+  }
+
+  .lab__grid,
+  .audit__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .research-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pipeline__step::after {
+    display: none;
+  }
+
+  .dumbbell__row {
+    grid-template-columns: 7.4em minmax(0, 1fr) 5.6em;
+    font-size: 14px;
+  }
+}

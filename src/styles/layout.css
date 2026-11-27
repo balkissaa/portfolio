@@ -1,0 +1,38 @@
+/* Page-level layout: centred container, full-width sections, column grids. */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-block: clamp(36px, 5vw, 76px);
+  padding-inline: max(5vw, 16px);
+}
+
+.section--tinted {
+  background: var(--bg-tinted);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.subsection-title {
+  margin-top: 46px;
+}
+
+.site-footer {
+  padding: 22px max(5vw, 16px);
+  color: var(--soft);
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 760px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
