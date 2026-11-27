@@ -1,2 +1,8 @@
-photo-original.jpg
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local files
 .DS_Store
+*.local
+photo-original.jpg

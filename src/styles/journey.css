@@ -1,0 +1,182 @@
+/* Career timeline (a vine whose leaves are jobs) and its sidebar. */
+.timeline {
+  position: relative;
+  margin-top: 26px;
+  padding-left: 34px;
+}
+
+/* The stem of the vine */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--leaf);
+}
+
+.job {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+/* A leaf for past jobs, a glowing bud for current ones */
+.job::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 14px;
+  width: 18px;
+  height: 12px;
+  border-radius: 0 100% 0 100%;
+  background: var(--leaf);
+  transform: rotate(-20deg);
+}
+
+.job--current::before {
+  background: var(--rose);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -30px;
+  top: 12px;
+  transform: none;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--rose) 25%, transparent);
+}
+
+.job__card {
+  --job-padding-block: 14px;
+  --job-padding-inline: 18px;
+
+  background: var(--card);
+  border-radius: 16px;
+  padding: var(--job-padding-block) var(--job-padding-inline);
+}
+
+.job__card:has(.job__header:focus-visible) {
+  outline: 3px solid var(--rose);
+}
+
+/* The header stretches over the card padding so the whole card toggles. */
+.job__header {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: calc(100% + 2 * var(--job-padding-inline));
+  margin: calc(-1 * var(--job-padding-block)) calc(-1 * var(--job-padding-inline));
+  padding: var(--job-padding-block) var(--job-padding-inline);
+  cursor: pointer;
+}
+
+.job__toggle-icon {
+  float: right;
+  font-weight: 700;
+  color: var(--rose);
+  transition: transform 0.3s;
+}
+
+.job.is-open .job__toggle-icon {
+  transform: rotate(45deg);
+}
+
+.job__period {
+  font-size: 14px;
+  color: var(--caramel);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.job__title {
+  font-weight: 700;
+  font-size: 17px;
+  display: block;
+}
+
+.job__org {
+  color: var(--soft);
+}
+
+/* Collapsible details: animating the grid row from 0fr to 1fr */
+.job__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s;
+}
+
+.job__details > div {
+  overflow: hidden;
+}
+
+.job.is-open .job__details {
+  grid-template-rows: 1fr;
+}
+
+.job ul {
+  margin: 10px 0 2px;
+  padding-left: 18px;
+  color: var(--soft);
+}
+
+.job li {
+  margin-bottom: 5px;
+}
+
+.job__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 4px;
+}
+
+.job__stack span {
+  background: var(--bg-tinted);
+  border-radius: 7px;
+  padding: 2px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Sidebar: education, awards, toolbox */
+.sidebar h3 {
+  margin: 24px 0 10px;
+}
+
+.sidebar h3:first-child {
+  margin-top: 26px;
+}
+
+.credential {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
+
+.credential b {
+  display: block;
+}
+
+.credential > span {
+  color: var(--soft);
+  font-size: 15px;
+}
+
+.toolbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toolbox li {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 600;
+}

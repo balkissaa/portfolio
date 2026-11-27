@@ -1,0 +1,27 @@
+/*
+ * Design tokens.
+ * Palette: latte beige, chocolate, powder pink, deep rose, olive foliage.
+ * Every colour has a light and a dark value; the browser picks one from the
+ * visitor's colour-scheme preference.
+ */
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#efe3d3, #1f130d);
+  --bg-tinted: light-dark(#f6d9df, #2c1a17);
+  --card: light-dark(#fbf5ee, #2a1b14);
+  --ink: light-dark(#3a2217, #f1e4d4);
+  --soft: light-dark(#6e4f3f, #c9b29f);
+  --rose: light-dark(#c4577b, #ec8fae);
+  --blush: light-dark(#eeaabd, #9c4a63);
+  --caramel: light-dark(#b07a4f, #d39b6a);
+  --leaf: light-dark(#7d8a5a, #93a26a);
+  --line: light-dark(#d9c5b0, #4a3428);
+
+  /* Yeseva One for headings, Figtree for text, Caveat for handwritten notes. */
+  --font-display: 'Yeseva One', Georgia, serif;
+  --font-body: Figtree, system-ui, sans-serif;
+  /* Buttons and form fields: without system-ui, which shifts the text of native controls. */
+  --font-controls: Figtree, sans-serif;
+  --font-hand: Caveat, cursive;
+}
